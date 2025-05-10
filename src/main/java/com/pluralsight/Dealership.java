@@ -38,6 +38,6 @@ public class Dealership {
 
     }
     void removeVehicle(int vin) {
-        
+
     }
 }
