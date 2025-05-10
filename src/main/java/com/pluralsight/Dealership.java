@@ -34,10 +34,10 @@ public class Dealership {
     ArrayList<Vehicle> getVehiclesByType(String type){
 
     }
-    void addVehicle(Vehicle vehicle) {
+    public void addVehicle(Vehicle vehicle) {
 
     }
-    void removeVehicle(int vin) {
+    public void removeVehicle(int vin) {
 
     }
 }
