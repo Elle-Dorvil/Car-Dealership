@@ -13,11 +13,27 @@ public class Dealership {
         return vehicles;
     }
 
-    public Dealership(String name, String address, String phone, ArrayList<Vehicle> vehicles) {
+    public Dealership(String name, String address, String phone) {
         this.name = name;
         this.address = address;
         this.phone = phone;
-        this.vehicles = vehicles;
+        this.vehicles = new ArrayList<>();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public ArrayList<Vehicle> getVehicles() {
+        return vehicles;
     }
 
     public ArrayList<Vehicle> getVehiclesByPrice(double min, double max){
