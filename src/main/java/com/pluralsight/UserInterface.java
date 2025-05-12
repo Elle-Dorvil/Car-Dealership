@@ -2,6 +2,9 @@ package com.pluralsight;
 
 public class UserInterface {
     public void display() {
+        private void innit () {
+
+        }
 
     }
     public void processGetByPrice() {
@@ -18,7 +21,8 @@ public class UserInterface {
     }
     public void processGetByMileage() {
 
-    } public void processGetByType () {
+    }
+    public void processGetByType () {
 
     }
     public void processAddVehicle() {
