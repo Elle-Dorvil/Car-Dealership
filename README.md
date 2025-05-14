@@ -46,7 +46,7 @@ Follow these steps to get your application running within IntelliJ IDEA:
 
 ## Demo
 
-![]https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzR1MWwwNjl5YzN0enlrcjlibHB3YjF4Y3lmMzE1emh6NnV4a2NoeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/81QTR1XQ470K0rZlD5/giphy.gif
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzR1MWwwNjl5YzN0enlrcjlibHB3YjF4Y3lmMzE1emh6NnV4a2NoeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/81QTR1XQ470K0rZlD5/giphy.gif)
 
 ## Future Work
 
