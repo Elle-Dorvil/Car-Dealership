@@ -1,8 +1,6 @@
 package com.pluralsight;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import java.io.*;
 
 public class DealershipFileManager {
 public Dealership getDealership() {
@@ -39,6 +37,7 @@ public Dealership getDealership() {
     }
 
   public void saveDealership(Dealership dealership){
+      BufferedWriter bw = new BufferedWriter(FileWriter("dealership.csv"));
 
   }
 }

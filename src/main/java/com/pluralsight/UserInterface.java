@@ -94,10 +94,10 @@ public class UserInterface {
     public void processGetByYear() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter minimum year: ");
-        Integer min = scanner.nextInt();
+        int min = scanner.nextInt();
 
         System.out.println("Enter maximum year: ");
-        Integer max = scanner.nextInt();
+        int max = scanner.nextInt();
 
         ArrayList<Vehicle> year = dealership.getVehiclesByYear(min, max);
         displayVehicles(year);
@@ -114,10 +114,10 @@ public class UserInterface {
     public void processGetByMileage() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter minimum mileage: ");
-        Integer min = scanner.nextInt();
+        int min = scanner.nextInt();
 
         System.out.println("Enter maximum mileage: ");
-        Integer max = scanner.nextInt();
+        int max = scanner.nextInt();
 
         ArrayList<Vehicle> mileage = dealership.getVehiclesByMileage(min, max);
         displayVehicles(mileage);
@@ -138,9 +138,9 @@ public class UserInterface {
     public void processAddVehicle() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter vin: ");
-        Integer vin = scanner.nextInt();
+        int vin = scanner.nextInt();
         System.out.println("Enter year of the Vehicle: ");
-        Integer year = scanner.nextInt();
+        int year = scanner.nextInt();
         scanner.nextLine();
         System.out.println("Enter make of the Vehicle: ");
         String make = scanner.nextLine();
@@ -151,7 +151,7 @@ public class UserInterface {
         System.out.println("Enter the color of the Vehicle: ");
         String color = scanner.nextLine();
         System.out.println("Enter the odometer of the Vehicle: ");
-        Integer odometer = scanner.nextInt();
+        int odometer = scanner.nextInt();
         System.out.println("Enter the price of the Vehicle: ");
         double price = scanner.nextDouble();
 
@@ -162,6 +162,20 @@ public class UserInterface {
 
     }
     public void processRemoveVehicle() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter vin number of the vehicle you'd like to remove: ");
+        int vin = input.nextInt();
+
+        boolean removed = dealership.removeVehicle(vin);
+            if (removed) {
+                System.out.println("Your Vehicle has been successfully removed! ");
+                new DealershipFileManager().saveDealership(dealership);
+            } else {
+                System.out.println("No Vehicles found with that VIN. ");
+            }
+
+
+
 
     }
 }
