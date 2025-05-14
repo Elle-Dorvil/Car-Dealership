@@ -166,10 +166,18 @@ public class UserInterface {
         System.out.println("Enter vin number of the vehicle you'd like to remove: ");
         int vin = input.nextInt();
 
-        boolean removed = dealership.removeVehicle(vin);
-            if (removed) {
-                System.out.println("Your Vehicle has been successfully removed! ");
-                new DealershipFileManager().saveDealership(dealership);
+        Vehicle toRemove = null;
+        for (Vehicle v : dealership.getAllVehicles()) {
+
+            if (v.getVin() == vin) {
+                toRemove = v;
+                break;
+            }
+        }
+        if (toRemove != null) {
+            dealership.removeVehicle(toRemove);
+            new DealershipFileManager().saveDealership(dealership);
+            System.out.println("Your Vehicle has been successfully removed! ");
             } else {
                 System.out.println("No Vehicles found with that VIN. ");
             }

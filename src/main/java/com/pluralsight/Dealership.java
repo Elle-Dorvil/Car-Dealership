@@ -9,10 +9,6 @@ public class Dealership {
 
     ArrayList<Vehicle> vehicles;
 
-    ArrayList<Vehicle> getAllVehicles() {
-        return vehicles;
-    }
-
     public Dealership(String name, String address, String phone) {
         this.name = name;
         this.address = address;
@@ -32,7 +28,7 @@ public class Dealership {
         return phone;
     }
 
-    public ArrayList<Vehicle> getVehicles() {
+    public ArrayList<Vehicle> getAllVehicles() {
         return vehicles;
     }
 
@@ -92,9 +88,7 @@ public class Dealership {
             }
         return matches;
     }
-    public ArrayList<Vehicle> getAllVehiclesRequest() {
-        return vehicles;
-    }
+
     public void addVehicle(Vehicle vehicle) {
         vehicles.add(vehicle);
     }

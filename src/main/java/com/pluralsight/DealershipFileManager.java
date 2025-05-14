@@ -42,7 +42,7 @@ public class DealershipFileManager {
             bw.write(header);
             bw.newLine();
 
-            for (Vehicle v : dealership.getVehicles()) {
+            for (Vehicle v : dealership.getAllVehicles()) {
                 String vehicleLine = v.getVin() + "|" + v.getYear() + "|" + v.getMake() + "|" + v.getModel() + "|" + v.getVehicleType()
                         + "|" + v.getColor() + "|" + v.getOdometer() + "|" + v.getPrice();
                 bw.write(vehicleLine);
