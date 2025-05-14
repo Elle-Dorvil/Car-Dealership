@@ -3,18 +3,18 @@ package com.pluralsight;
 import java.io.*;
 
 public class DealershipFileManager {
-public Dealership getDealership() {
-    Dealership dealership = null;
-    String line;
-    try {
-        BufferedReader br = new BufferedReader(new FileReader("dealership.csv"));
-        if ((line = br.readLine()) != null) {
-            String[] parts = line.split("\\|");
-            String name = parts[0];
-            String address = parts[1];
-            String phone = parts[2];
-            dealership = new Dealership(name, address, phone);
-        }
+    public Dealership getDealership() {
+        Dealership dealership = null;
+        String line;
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("dealership.csv"));
+            if ((line = br.readLine()) != null) {
+                String[] parts = line.split("\\|");
+                String name = parts[0];
+                String address = parts[1];
+                String phone = parts[2];
+                dealership = new Dealership(name, address, phone);
+            }
             while ((line = br.readLine()) != null) {
                 String[] fields = line.split("\\|");
                 int vin = Integer.parseInt(fields[0]);
@@ -29,15 +29,29 @@ public Dealership getDealership() {
                 dealership.addVehicle(vehicle);
             }
             br.close();
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return dealership;
     }
 
-  public void saveDealership(Dealership dealership){
-      BufferedWriter bw = new BufferedWriter(FileWriter("dealership.csv"));
+    public void saveDealership(Dealership dealership) {
+        try {
+            BufferedWriter bw = new BufferedWriter(new FileWriter("dealership.csv"));
+            String header = dealership.getName() + "|" + dealership.getAddress() + "|" + dealership.getPhone();
+            bw.write(header);
+            bw.newLine();
 
-  }
+            for (Vehicle v : dealership.getVehicles()) {
+                String vehicleLine = v.getVin() + "|" + v.getYear() + "|" + v.getMake() + "|" + v.getModel() + "|" + v.getVehicleType()
+                        + "|" + v.getColor() + "|" + v.getOdometer() + "|" + v.getPrice();
+                bw.write(vehicleLine);
+                bw.newLine();
+            }
+            bw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
+
