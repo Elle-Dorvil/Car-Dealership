@@ -2,6 +2,7 @@ package com.pluralsight;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.SortedMap;
 
 public class UserInterface {
   private Dealership dealership;
@@ -135,6 +136,29 @@ public class UserInterface {
 
     }
     public void processAddVehicle() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter vin: ");
+        Integer vin = scanner.nextInt();
+        System.out.println("Enter year of the Vehicle: ");
+        Integer year = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Enter make of the Vehicle: ");
+        String make = scanner.nextLine();
+        System.out.println("Enter model of the Vehicle: ");
+        String model = scanner.nextLine();
+        System.out.println("Enter the type of Vehicle: ");
+        String type = scanner.nextLine();
+        System.out.println("Enter the color of the Vehicle: ");
+        String color = scanner.nextLine();
+        System.out.println("Enter the odometer of the Vehicle: ");
+        Integer odometer = scanner.nextInt();
+        System.out.println("Enter the price of the Vehicle: ");
+        double price = scanner.nextDouble();
+
+        dealership.addVehicle(new Vehicle(vin, year, make, model, type, color, odometer, price));
+        new DealershipFileManager().saveDealership(dealership);
+
+        System.out.println("Your Vehicle has been added successfully! ");
 
     }
     public void processRemoveVehicle() {
