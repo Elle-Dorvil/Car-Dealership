@@ -2,7 +2,6 @@ package com.pluralsight;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.SortedMap;
 
 public class UserInterface {
   private Dealership dealership;
@@ -53,6 +52,7 @@ public class UserInterface {
                 case "9": processRemoveVehicle();
                 break;
                 case "99": loadOptions = false;
+                break;
 
                 default:
                     System.out.println("Invalid Choice, Please select another option. ");
@@ -181,9 +181,5 @@ public class UserInterface {
             } else {
                 System.out.println("No Vehicles found with that VIN. ");
             }
-
-
-
-
     }
 }

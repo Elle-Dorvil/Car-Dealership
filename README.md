@@ -2,16 +2,24 @@
 
 ## Description of the Project
 
-Briefly describe what this Java console application does. Mention its purpose and who the intended users are. Explain the main functionality and what problems it aims to solve.
+This is a Java application that allows users to interact with a virtual car dealership. 
+The system supports: Searching for vehicles by various filters (price, make/model, year, color, mileage, and type).
+Viewing the entire vehicle inventory. 
+Adding and removing vehicles from the inventory.
+Saving and loading dealership data to and from a file using a pipe-delimited format.
 
-![Class Diagram](path/to/your/class_diagram.png)
 
 ## User Stories
-
-List the user stories that guided the development of your application. Format these stories as: "As a [type of user], I want [some goal] so that [some reason]."
-
-- As a user, I want to be able to input my data, so that the application can process it accordingly.
-- As a user, I want to receive immediate feedback, so I can understand what to do next.
+- As a shopper, I want to find vehicles within a specific price range so that I can stay within my budget
+- As a shopper, I want to search by make and model so that I can quickly find specific vehicles I'm interested in.
+- As a shopper, I want to filter vehicles by year range so that I can prioritize newer cars that meet my needs.
+- As a shopper, I want to search by color so that I can choose a vehicle that fits my personal style.
+- As a shopper, I want to filter by mileage so that I can evaluate how much a vehicle has been used.
+- As a shopper, I want to browse by vehicle type (e.g., SUV, truck) so that I can find a style that suits my lifestyle.
+- As a sales manager, I want to list all vehicles so that customers can see our full inventory.
+- As a sales manager, I want to add vehicles to the inventory so that our listings stay up-to-date
+- As a sales manager, I want to remove sold or unavailable vehicles so that customers aren't shown outdated listings.
+- As a shopper, I want to exit the application so that I can leave the dealership system when I’m done browsing.
 
 ## Setup
 
@@ -34,38 +42,31 @@ Follow these steps to get your application running within IntelliJ IDEA:
 
 ## Technologies Used
 
-- Java: Mention the version you are using.
-- Any additional libraries or frameworks used in the project.
+- Java: Corretto 17
 
 ## Demo
 
-Include screenshots or GIFs that show your application in action. Use tools like [Giphy Capture](https://giphy.com/apps/giphycapture) to record a GIF of your application.
-
-![Application Screenshot](path/to/your/screenshot.png)
+![]https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzR1MWwwNjl5YzN0enlrcjlibHB3YjF4Y3lmMzE1emh6NnV4a2NoeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/81QTR1XQ470K0rZlD5/giphy.gif
 
 ## Future Work
 
 Outline potential future enhancements or functionalities you might consider adding:
 
-- Additional feature to be developed.
-- Improvement of current functionalities.
+- Vehicle History tracking
+- Combined search filters
+- Allow permissions user vs salesperson
 
 ## Resources
 
 List resources such as tutorials, articles, or documentation that helped you during the project.
 
-- [Java Programming Tutorial](https://www.example.com)
-- [Effective Java](https://www.example.com)
-
-## Team Members
-
-- **Name 1** - Specific contributions or roles.
-- **Name 2** - Specific contributions or roles.
+- Raymond's 2025 GitHub Examples
+- Potato Sensei
 
 ## Thanks
 
 Express gratitude towards those who provided help, guidance, or resources:
 
-- Thank you to [Mentor's Name] for continuous support and guidance.
-- A special thanks to all teammates for their dedication and teamwork.
+- Thank you to Raymond for continuous support and guidance.
+- A special thanks to all my peers for constant encouragement and support.
  
