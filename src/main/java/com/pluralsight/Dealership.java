@@ -36,30 +36,55 @@ public class Dealership {
         return vehicles;
     }
 
-    public ArrayList<Vehicle> getVehiclesByPrice(double min, double max){
-        return null;
+    public ArrayList<Vehicle> getVehiclesByPrice(double min, double max) {
+        ArrayList<Vehicle> matches = new ArrayList<>();
+        for (Vehicle v : vehicles)
+            if (v.getPrice() >= min && v.getPrice() <= max) {
+                matches.add(v);
+            }
+        return matches;
     }
 
+
+
     public ArrayList<Vehicle> getVehiclesByMakeModel(String make, String model){
-        return null;
+        ArrayList<Vehicle> matches = new ArrayList<>();
+        for (Vehicle v : vehicles)
+            if (v.getMake().equalsIgnoreCase(make) && v.getModel().equalsIgnoreCase(model)) {
+                matches.add(v);
+            }
+        return matches;
     }
 
     public ArrayList<Vehicle> getVehiclesByYear(int min, int max){
-        return null;
+        ArrayList<Vehicle> matches = new ArrayList<>();
+        for (Vehicle v : vehicles)
+            if (v.getYear() >= min && v.getYear() <= max) {
+                matches.add(v);
+            }
+        return matches;
 
     }
 
    public ArrayList<Vehicle> getVehiclesByColor(String color){
-        return null;
+        ArrayList<Vehicle> matches = new ArrayList<>();
+        for (Vehicle v : vehicles)
+            if (v.getColor().equalsIgnoreCase(color)) {
+                matches.add(v);
+            }
+        return matches;
 
     }
    public ArrayList<Vehicle> getVehiclesByMileage(int min, int max){
+        ArrayList<Vehicle>
         return null;
 
     }
    public ArrayList<Vehicle> getVehiclesByType(String type){
         return null;
-
+    }
+    public ArrayList<Vehicle> getAllVehiclesRequest() {
+        return vehicles;
     }
     public void addVehicle(Vehicle vehicle) {
         vehicles.add(vehicle);

@@ -1,10 +1,13 @@
 package com.pluralsight;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UserInterface {
+  private Dealership dealership;
     private void innit () {
         DealershipFileManager fileManager = new DealershipFileManager();
+        this.dealership = fileManager.getDealership();
     }
     public void display() {
         innit();
@@ -42,9 +45,11 @@ public class UserInterface {
                 break;
                 case "6": processGetByType();
                 break;
-                case "7": processAddVehicle();
+                case "7": processGetAllVehicles();
                 break;
-                case "8": processRemoveVehicle();
+                case "8": processAddVehicle();
+                break;
+                case "9": processRemoveVehicle();
                 break;
                 case "99": loadOptions = false;
 
@@ -54,27 +59,79 @@ public class UserInterface {
             }
         }
         scanner.close();
-
+    }
+    public void displayVehicles(ArrayList<Vehicle> vehicles) {
+        if (vehicles.isEmpty()) {
+            System.out.println("No results found.");
+        } else {
+            for (Vehicle vehicle : vehicles) {
+                System.out.println(vehicle);
+            }
+        }
     }
     public void processGetByPrice() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter minimum price: ");
+        double min = scanner.nextDouble();
+        System.out.println("Emter maximum price: ");
+        double max = scanner.nextDouble();
 
-
-
-
+        ArrayList<Vehicle> priceList = dealership.getVehiclesByPrice(min, max);
+        displayVehicles(priceList);
     }
     public void processGetByMakeModel() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter make: ");
+        String make = scanner.nextLine();
 
+        System.out.println("Enter model: ");
+        String model = scanner.nextLine();
+
+        ArrayList<Vehicle> makeModel = dealership.getVehiclesByMakeModel(make, model);
+        displayVehicles(makeModel);
     }
     public void processGetByYear() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter minimum year: ");
+        Integer min = scanner.nextInt();
+
+        System.out.println("Enter maximum year: ");
+        Integer max = scanner.nextInt();
+
+        ArrayList<Vehicle> year = dealership.getVehiclesByYear(min, max);
+        displayVehicles(year);
 
     }
     public void processGetByColor() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter color: ");
+        String color = scanner.nextLine();
 
+        ArrayList<Vehicle> findColor = dealership.getVehiclesByColor(color);
+        displayVehicles(findColor);
     }
     public void processGetByMileage() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter minimum mileage: ");
+        Integer min = scanner.nextInt();
 
+        System.out.println("Enter maximum mileage: ");
+        Integer max = scanner.nextInt();
+
+        ArrayList<Vehicle> mileage = dealership.getVehiclesByMileage(min, max);
+        displayVehicles(mileage);
     }
     public void processGetByType () {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter Vehicle type: ");
+        String type = scanner.nextLine();
+
+        ArrayList<Vehicle> findType = dealership.getVehiclesByType(type);
+        displayVehicles(findType);
+
+    }
+    public void processGetAllVehicles() {
+        displayVehicles(dealership.getAllVehicles());
 
     }
     public void processAddVehicle() {
